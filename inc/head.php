@@ -48,6 +48,12 @@
         </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid text-right">
-        <strong>Hello Wilder !</strong>
+        <strong>Hello <?php
+        if (isset($_SESSION['name'])) {
+            echo $_SESSION['name'] . "!" . PHP_EOL . "<a href='logout.php'>[Log out]</a>" . "</strong>";
+        } else {
+            echo "Wilder!</strong>";
+        }
+         ?>
     </div>
 </header>

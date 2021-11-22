@@ -1,5 +1,13 @@
 <?php require 'inc/head.php'; ?>
-<div class="container" style="margin-top:40px">
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    session_start();
+    $_SESSION['name'] = $_POST['loginname'];
+    header('location: /');
+}
+
+?><div class="container" style="margin-top:40px">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
             <div class="panel panel-default">
